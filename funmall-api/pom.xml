@@ -19,6 +19,7 @@
     <modules>
         <module>funmall-api-user</module>
         <module>funmall-api-shopping</module>
+        <module>funmall-api-goods</module>
     </modules>
 
     <properties>
@@ -28,6 +29,12 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.6</version>
+            <!--<scope>provided</scope>-->
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

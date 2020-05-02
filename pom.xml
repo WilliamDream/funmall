@@ -10,9 +10,7 @@
   <version>1.0.0-SNAPSHOT</version>
   <modules>
     <module>funmall-api</module>
-    <module>funmall-register-eureka</module>
     <module>funmall-commons</module>
-    <module>funmall-gateway-zuul</module>
     <module>pay-center-service</module>
     <module>user-service</module>
     <module>shopping-service</module>
@@ -22,6 +20,8 @@
     <module>coupon-service</module>
     <module>order-service</module>
     <module>stock-service</module>
+    <module>funmall-base-services</module>
+    <module>goods-service</module>
   </modules>
 
   <name>funmall</name>
@@ -30,9 +30,10 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
     <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+    <feign.version>1.4.3.RELEASE</feign.version>
     <spring-boot-start.version>2.0.8.RELEASE</spring-boot-start.version>
     <springframework.version>5.2.1.RELEASE</springframework.version>
     <junit.version>4.11</junit.version>
@@ -42,6 +43,8 @@
     <druid.version>1.1.19</druid.version>
     <mybatis-spring-boot.version>2.1.0</mybatis-spring-boot.version>
     <pagehelper.version>1.2.4</pagehelper.version>
+    <eureka.version>2.0.0.RELEASE</eureka.version>
+    <springfox.version>2.6.1</springfox.version>
   </properties>
 
   <dependencies>
@@ -67,6 +70,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- SpringCloud start-->
       <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-dependencies</artifactId>
@@ -75,6 +79,15 @@
         <scope>import</scope>
       </dependency>
 
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-feign</artifactId>
+        <version>${feign.version}</version>
+      </dependency>
+
+      <!-- SpringCloud end-->
+
+      <!-- SpringBoot start-->
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot</artifactId>
@@ -93,6 +106,15 @@
         <groupId>org.mybatis.spring.boot</groupId>
         <artifactId>mybatis-spring-boot-starter</artifactId>
         <version>${mybatis-spring-boot.version}</version>
+      </dependency>
+
+      <!-- SpringCloud end-->
+
+      <!-- eureka -->
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        <version>${eureka.version}</version>
       </dependency>
 
       <dependency>
@@ -131,6 +153,33 @@
         <artifactId>druid</artifactId>
         <version>${druid.version}</version>
       </dependency>
+
+      <dependency>
+        <groupId>javax.persistence</groupId>
+        <artifactId>javax.persistence-api</artifactId>
+        <version>2.2</version>
+      </dependency>
+
+      <!-- lombok -->
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <optional>true</optional>
+      </dependency>
+
+      <!-- swagger cloud start -->
+      <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-swagger2</artifactId>
+        <version>${springfox.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-swagger-ui</artifactId>
+        <version>${springfox.version}</version>
+      </dependency>
+      <!-- swagger cloud end -->
+
     </dependencies>
 
   </dependencyManagement>
