@@ -3,7 +3,7 @@ package com.funmall.commons.error.exception;
 import com.funmall.commons.error.errorCode.GlobalErrorCode;
 import com.funmall.commons.error.errorCode.basic.IErrorCodeEnum;
 
-public class ValidateException extends BizException
+public class ValidateException extends BusinessException
 {
   private static final long serialVersionUID = 1L;
 

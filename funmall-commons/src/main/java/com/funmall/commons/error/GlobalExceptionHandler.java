@@ -2,7 +2,7 @@ package com.funmall.commons.error;
 
 import com.funmall.commons.error.errorCode.GlobalErrorCode;
 import com.funmall.commons.error.exception.AuthException;
-import com.funmall.commons.error.exception.BizException;
+import com.funmall.commons.error.exception.BusinessException;
 import com.funmall.commons.vo.ResultVo;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -18,9 +18,9 @@ public class GlobalExceptionHandler
 {
   private static Log log = LogFactory.getLog(GlobalExceptionHandler.class);
 
-  @ExceptionHandler({BizException.class})
+  @ExceptionHandler({BusinessException.class})
   @ResponseBody
-  public ResultVo bizExceptionHandler(HttpServletRequest req, Exception e) { BizException ex = (BizException)e;
+  public ResultVo bizExceptionHandler(HttpServletRequest req, Exception e) { BusinessException ex = (BusinessException)e;
     ResultVo result = ResultVo.error(ex);
     return result; } 
   @ExceptionHandler({AuthException.class})

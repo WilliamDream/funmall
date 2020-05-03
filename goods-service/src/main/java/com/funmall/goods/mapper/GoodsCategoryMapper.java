@@ -1,7 +1,7 @@
 package com.funmall.goods.mapper;
 
 
-import com.funmall.goods.pojo.po.GoodsCategory;
+import com.funmall.goods.model.po.GoodsCategory;
 
 import java.util.List;
 
